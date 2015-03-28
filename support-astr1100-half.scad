@@ -1,3 +1,5 @@
+use <write.scad>
+
 inch = 25.4;
 h_hole = 1/2*inch;
 h_length = 2*inch;
@@ -8,15 +10,14 @@ radius = 1/2*inch/2;
 radius2 = 1/4*inch/2+1/64*inch/2;
 clearance440 = 0.1285*inch;
 
-
-module support()
-{
 difference()
 {
 
     union()
     {
          cube([h_thick, h_length, h_thick]);                // h block for sensor
+         translate([h_thick/2, h_length/2, h_thick])
+             write("KPU Physics", t=2, rotate=90, center=true);
 
          translate([-v_length,h_length/2-v_thick/2,0])
              cube([v_length, v_thick, v_thick]);            // v block for support rod
@@ -47,9 +48,3 @@ difference()
 //       cube([v_length+h_thick+2, h_length+2, h_thick+2]);
 
 }
-}
-
-translate([v_length,0,0]) 
-     support();
-
-//rotate([0,0,180]) support();
