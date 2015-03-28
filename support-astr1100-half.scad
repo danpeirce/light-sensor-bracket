@@ -43,8 +43,8 @@ difference()
     translate([-0.3*inch-1.5*inch, h_length/2+0.22*inch, -1])
          cylinder(h=h_thick+2, r=clearance440/2, $fn=100);              // support hole 4
     
-    translate([-v_length-1, 0-1, h_thick/2])                            // slice object in half
-       cube([v_length+h_thick+2, h_length+2, h_thick+2]);
+//    translate([-v_length-1, 0-1, h_thick/2])                            // slice object in half
+//       cube([v_length+h_thick+2, h_length+2, h_thick+2]);
 
 }
 }
